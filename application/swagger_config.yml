@@ -1,0 +1,24 @@
+swagger: "2.0"
+info:
+  title: "My API"
+  description: "API for retrieving responses"
+  version: "1.0"
+host: "localhost:5001"
+basePath: "/"
+schemes:
+  - "http"
+paths:
+  /get_response:
+    post:
+      summary: "Retrieve a response"
+      consumes:
+        - "multipart/form-data"
+      parameters:
+        - in: "formData"
+          name: "query"
+          type: "string"
+          description: "The query to retrieve a response for"
+          required: true
+      responses:
+        200:
+          description: "Successful response retrieval"
